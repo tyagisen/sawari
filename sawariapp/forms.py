@@ -12,4 +12,3 @@ class DriverForm(forms.ModelForm):
             'phone': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Phone', 'name': 'phone'}),
             'vehicle_type': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Vehicle Type', 'name': 'vehicle_type'}),
         }
-
