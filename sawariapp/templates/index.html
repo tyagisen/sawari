@@ -7,7 +7,7 @@
         <div class="row">
             <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6 col-xs-6 d-flex align-items-center">
                 <div class="st_logo">
-                    <a href="#"><img src="{% static 'assets/images/logo/st_logo-04.png' %}" alt="St Logo"></a>
+                    <a href="#home"><img src="{% static 'assets/images/logo/st_logo-04.png' %}" alt="St Logo"></a>
                 </div>
             </div>
             <div class="col-xl-10 col-lg-10 col-md-6 col-sm-6 col-xs-6 d-flex justify-content-end">
@@ -75,15 +75,19 @@
                                         <small>{{field.errors|striptags}}</small>
                                     </div>
                                     {% endfor %}
-                                    {% if messages %}
-                                        {% for message in messages %}
-                                        {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}
-                                        {% endfor %}
-                                    {% endif %}
                                     <div class="st_input_item">
                                         <input type="submit" class="shadow-none bg-emerald bg-hover-st-aqua"
                                                value="Submit">
                                     </div>
+                                    {% if messages %}
+                                    {% for message in messages %}
+                                    {% if message.tags %}
+                                    <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+                                        {{ message }}
+                                    </div>
+                                    {% endif %}
+                                    {% endfor %}
+                                    {% endif %}
                                 </form>
                             </div>
                         </div>
@@ -185,10 +189,12 @@
                     </div> -->
                     <!-- <div class="st_or text-emerald">or</div> -->
                     <div class="st_app_download_btn">
-                        <a class="st_default_btn bg-st-white" href="#"><img src="{% static 'assets/images/v5/google-play.png' %}"
-                                                                            alt=""></a>
-                        <a class="st_default_btn bg-haiti" href="#"><img src="{% static 'assets/images/v5/app-store.png' %}"
-                                                                         alt=""></a>
+                        <a class="st_default_btn bg-st-white" href="#"><img
+                                src="{% static 'assets/images/v5/google-play.png' %}"
+                                alt=""></a>
+                        <a class="st_default_btn bg-haiti" href="#"><img
+                                src="{% static 'assets/images/v5/app-store.png' %}"
+                                alt=""></a>
                     </div>
                 </div>
             </div>
