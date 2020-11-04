@@ -1,5 +1,5 @@
 from django.db import models
-
+from ckeditor.fields import RichTextField
 
 # Create your models here.
 
@@ -12,7 +12,8 @@ class Category(models.Model):
 class Blog(models.Model):
     title=models.CharField(max_length=200)
     subtitle = models.CharField(max_length=200, null=True, blank=True)
-    description=models.TextField(null=True,blank=True)
+    description = RichTextField(blank=True, null=True)
+    # description=models.TextField(null=True,blank=True)
     author = models.ForeignKey('auth.User', on_delete=models.CASCADE, null=True, blank=True)
     image=models.ImageField(upload_to='blog/',null=True)
     date = models.DateField(auto_now_add=True, blank=True, null=True)

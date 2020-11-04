@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'sawariapp',
     'blog',
 
+    'ckeditor', 
+
 ]
 
 MIDDLEWARE = [
