@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+
+
 <div id="stick-menu"></div>
 <header class="st_header_area sticky-bg-clear-day">
     <div class="container">
@@ -63,7 +65,7 @@
                              aria-labelledby="pills-driver-tab">
                             <div class="st_contact_waraper">
                                 <h3 class="text-center">SIGN UP AS DRIVER</h3>
-                                <form class="st_contact_form_box" action="#" method="POST">
+                                <form class="st_contact_form_box" action="#" method="POST" onsubmit="return myFunction()" name="myForm">
                                     {% csrf_token %}
                                     {% if form.non_field_errors %}
                                     {% for error in form.non_field_errors %}
@@ -76,15 +78,21 @@
                                         <small>{{field.errors|striptags}}</small>
                                     </div>
                                     {% endfor %}
-                                    <div class="st_input_item">
+                                    <div class="st_input_item" >
                                         <input type="submit" class="shadow-none bg-emerald bg-hover-st-aqua"
-                                               value="Submit">
+                                               value="Submit" data-toggle="model" data-target="#modelLoginForm" > 
                                     </div>
+                                
+
+                                  
                                     {% if messages %}
+
                                     {% for message in messages %}
                                     {% if message.tags %}
-                                    <div class="alert alert-{{message.tags}}" role="alert">
+                                    <div class="alert alert-{{message.tags}}" role="alert" >
+
                                         {{ message }}
+
                                     </div>
                                     {% endif %}
                                     {% endfor %}
@@ -516,4 +524,7 @@
     <!--- End container -->
 </footer>
 <!--- End st_default_footer_area -->
+
+
+
 {% endblock content %}
