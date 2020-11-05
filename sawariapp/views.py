@@ -18,11 +18,14 @@ def sign(request):
                 'Driver Form',
                 message,
                 settings.EMAIL_HOST_USER,
-                ['tyagisen@gmail.com'],
+                ['darshanthapa872@gmail.com'],
                 fail_silently=False,
             )
             messages.add_message(request, messages.INFO, 'You Are Registerd')
-            fm = DriverForm()
+            # fm = DriverForm()
+        else:
+            messages.add_message(request, messages.INFO, 'Your Credentials Were Incorrect')
+            # fm = DriverForm()   
     else:
         fm = DriverForm()
     return render(request, 'index.html', {'form': fm})

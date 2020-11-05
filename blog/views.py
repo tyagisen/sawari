@@ -14,10 +14,22 @@ from blog.models import Blog as BlogModel
 #     context_object_name = 'home'
 #     template_name = 'index.html'
 
-class BlogView(TemplateView):
+# class BlogView(TemplateView):
+#     model = Blog
+#     context_object_name = 'blog'
+#     template_name = 'blog.html'
+
+#     def get(self,request):
+#         context={
+#             'blog': BlogModel.objects.all()
+#         }
+#         return render(request, self.template_name,context)
+
+class BlogView(ListView):
     model = Blog
     context_object_name = 'blog'
     template_name = 'blog.html'
+    paginate_by = 2
 
     def get(self,request):
         context={
