@@ -65,7 +65,7 @@
                              aria-labelledby="pills-driver-tab">
                             <div class="st_contact_waraper">
                                 <h3 class="text-center">SIGN UP AS DRIVER</h3>
-                                <form class="st_contact_form_box" action="#" method="POST" onsubmit="return myFunction()" name="myForm">
+                                <form class="st_contact_form_box" action="#" method="POST" name="myForm">
                                     {% csrf_token %}
                                     {% if form.non_field_errors %}
                                     {% for error in form.non_field_errors %}
@@ -78,18 +78,17 @@
                                         <small>{{field.errors|striptags}}</small>
                                     </div>
                                     {% endfor %}
-                                    <div class="st_input_item" >
+                                    <div class="st_input_item">
                                         <input type="submit" class="shadow-none bg-emerald bg-hover-st-aqua"
-                                               value="Submit" data-toggle="model" data-target="#modelLoginForm" > 
+                                               value="Submit" data-toggle="model" data-target="#modelLoginForm">
                                     </div>
-                                
 
-                                  
+
                                     {% if messages %}
 
                                     {% for message in messages %}
                                     {% if message.tags %}
-                                    <div class="alert alert-{{message.tags}}" role="alert" >
+                                    <div class="alert alert-{{message.tags}}" role="alert">
 
                                         {{ message }}
 
@@ -110,6 +109,24 @@
     <!--End container -->
 </section>
 <!--End st_banner_area -->
+<div class="popup" id="popup-1">
+    <div class="overlay"></div>
+    <div class="content">
+        <div class="close-btn" onclick="togglepopup()">&times;</div>
+        <h1>iTSoch Info</h1>
+        <p>Thank You For submitting <br>For more detail 9800991847</p>
+    </div>
+</div>
+<!--<button onclick="togglepopup()">show page</button>-->
+{% if success is True %}
+<script>
+function togglepopup(){
+        document.getElementById("popup-1").classList.toggle("active");
+    }
+togglepopup();
+
+</script>
+{% endif %}
 
 <div class="st_promo_area st_section_padding st_promo_center">
     <div class="container">
@@ -524,7 +541,6 @@
     <!--- End container -->
 </footer>
 <!--- End st_default_footer_area -->
-
 
 
 {% endblock content %}

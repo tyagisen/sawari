@@ -1,9 +1,11 @@
 from django.shortcuts import render
-from django.shortcuts import render,redirect,HttpResponse,get_object_or_404
+from django.shortcuts import render, redirect, HttpResponse, get_object_or_404
 from .models import *
 from django.urls import reverse_lazy
-from django.views.generic import ListView, DetailView, RedirectView,TemplateView
+from django.views.generic import ListView, DetailView, RedirectView, TemplateView
 from blog.models import Blog as BlogModel
+
+
 # Create your views here.
 
 # def home(request):
@@ -19,11 +21,12 @@ class BlogView(TemplateView):
     context_object_name = 'blog'
     template_name = 'blog.html'
 
-    def get(self,request):
-        context={
+    def get(self, request):
+        context = {
             'blog': BlogModel.objects.all()
         }
-        return render(request, self.template_name,context)
+        return render(request, self.template_name, context)
+
 
 def blog_details(request, id):
     # data = Blog.objects.get(pk=id) #SELECT * FROM 'blog'
@@ -32,4 +35,3 @@ def blog_details(request, id):
         'blog_detail': data
     }
     return render(request, 'blogdetail.html', context)
-
