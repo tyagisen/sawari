@@ -3,9 +3,11 @@ from .forms import DriverForm
 from django.contrib import messages
 from django.core.mail import send_mail
 from django.conf import settings
+from django.http import HttpResponseRedirect
 
 
 def sign(request):
+    
     if request.method == 'POST':
         fm = DriverForm(request.POST)
         message1 = request.POST['name']
@@ -21,8 +23,13 @@ def sign(request):
                 ['tyagisen@gmail.com'],
                 fail_silently=False,
             )
+        
             messages.add_message(request, messages.INFO, 'You Are Registerd')
-            fm = DriverForm()
+            return HttpResponseRedirect('/')
     else:
+        
         fm = DriverForm()
     return render(request, 'index.html', {'form': fm})
+
+
+   

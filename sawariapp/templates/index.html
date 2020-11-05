@@ -21,7 +21,7 @@
                             <li><a href="#faqs">Faqs</a></li>
                             <li><a href="#contact">Contact</a></li>
                             <li><a href="#" class="st_default_btn bg-emerald bg-hover-st-aqua m-l-40 m-lg-l-none">SIGN
-                                IN</a></li>
+                                    IN</a></li>
                         </ul>
                     </div>
                 </div>
@@ -34,33 +34,36 @@
 <!--End st_header_area -->
 
 <section id="home" class="st_banner_area st-background-wrap bg-clear-day"
-         style="background-image: url({% static 'assets/images/v5/banner-bg.png' %});">
+    style="background-image: url({% static 'assets/images/v5/banner-bg.png' %});">
     <div class="container">
         <div class="row">
-            <div class="col-lg-7 d-flex justify-content-start align-items-center height-100vh-full-screen st-height-md-inherit">
+            <div
+                class="col-lg-7 d-flex justify-content-start align-items-center height-100vh-full-screen st-height-md-inherit">
                 <div class="st_banner_waraper m-md-t-200 st-text-md-center">
                     <div class="st_banner_content color_black align_item br-md-none">
-                        <h1 class="st-font-sm-34">Share Your Ride<br/> Earn Money With <span class="text-emerald">Sawari!</span>
+                        <h1 class="st-font-sm-34">Share Your Ride<br /> Earn Money With <span
+                                class="text-emerald">Sawari!</span>
                         </h1>
-                        <p>Share a ride <br/>Earn and contribute to Society.</p>
+                        <p>Share a ride <br />Earn and contribute to Society.</p>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-5 d-flex align-items-center justify-content-end height-100vh-full-screen st-height-md-inherit">
+            <div
+                class="col-lg-5 d-flex align-items-center justify-content-end height-100vh-full-screen st-height-md-inherit">
                 <div class="st_banner_tab st-width-90 st-width-md-70 st-width-sm-100 st-side-md-auto m-md-b-80 wow fadeInUp"
-                     data-wow-delay="0.3s">
+                    data-wow-delay="0.3s">
                     <div class="tab-content" id="pills-tabContent">
                         <div class="st_custom-tab">
                             <ul class="nav nav-pills" id="pills-tab" role="tablist">
                                 <li class="nav-item">
                                     <a class="nav-link p-t-b-15 active" id="pills-driver-tab" data-toggle="pill"
-                                       href="#pills-driver" role="tab" aria-controls="pills-driver"
-                                       aria-selected="true">DRIVER</a>
+                                        href="#pills-driver" role="tab" aria-controls="pills-driver"
+                                        aria-selected="true">DRIVER</a>
                                 </li>
                             </ul>
                         </div>
                         <div class="tab-pane show active" id="pills-driver" role="tabpanel"
-                             aria-labelledby="pills-driver-tab">
+                            aria-labelledby="pills-driver-tab">
                             <div class="st_contact_waraper">
                                 <h3 class="text-center">SIGN UP AS DRIVER</h3>
                                 <form class="st_contact_form_box" action="#" method="POST">
@@ -76,11 +79,39 @@
                                         <small>{{field.errors|striptags}}</small>
                                     </div>
                                     {% endfor %}
-                                    <div class="st_input_item">
-                                        <input type="submit" class="shadow-none bg-emerald bg-hover-st-aqua"
-                                               value="Submit">
+                                    
+                                    <div>
+                                        <input type="submit"  onclick="myFunction()" class="shadow-none bg-emerald bg-hover-st-aqua"
+                                            value="Submit">
+                                    
                                     </div>
-                                    {% if messages %}
+                                    <script>
+                                        function myFunction() {
+                                          alert("Hello! I am an alert box!");
+                                        }
+                                    </script>
+
+                                                                      
+                                    
+                                    <!-- <div class="st_input_item modal fade" id="myModal">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h1>Remarks</h1>
+                                                </div>
+                                                <div class="modal-body">
+                                                    Submission Successful!!
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <input class="btn btn-default" data-dismiss="modal" value='close'>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> -->
+                                    
+                
+                            
+                                    <!-- {% if messages %}
                                     {% for message in messages %}
                                     {% if message.tags %}
                                     <div class="alert alert-{{message.tags}}" role="alert">
@@ -88,7 +119,7 @@
                                     </div>
                                     {% endif %}
                                     {% endfor %}
-                                    {% endif %}
+                                    {% endif %} -->
                                 </form>
                             </div>
                         </div>
@@ -108,7 +139,7 @@
         <div class="row">
             <div class="col-lg-4 col-md-4">
                 <a href="#" class="st_single_prom_item m-sm-b-100 st_single_prom_item_v3 wow fadeInUp"
-                   data-wow-delay="0.3s">
+                    data-wow-delay="0.3s">
                     <div class="st_promo_icon">
                         <img src="{% static 'assets/images/v5/promo-01.jpg' %}" alt="">
                     </div>
@@ -122,7 +153,7 @@
             </div>
             <div class="col-lg-4 col-md-4">
                 <a href="#" class="st_single_prom_item m-sm-b-100 st_single_prom_item_v3 wow fadeInUp"
-                   data-wow-delay="0.5s">
+                    data-wow-delay="0.5s">
                     <div class="st_promo_icon">
                         <img src="{% static 'assets/images/v5/promo-02.jpg' %}" alt="">
                     </div>
@@ -135,7 +166,7 @@
             </div>
             <div class="col-lg-4 col-md-4">
                 <a href="#" class="st_single_prom_item m-sm-b-100 st_single_prom_item_v3 wow fadeInUp"
-                   data-wow-delay="0.7s">
+                    data-wow-delay="0.7s">
                     <div class="st_promo_icon">
                         <img src="{% static 'assets/images/v5/promo-03.jpg' %}" alt="">
                     </div>
@@ -157,9 +188,10 @@
     <div class="container">
         <div class="st_ride_waraper text-center wow fadeInUp" data-wow-delay="0.3s">
             <img src="{% static 'assets/images/v5/ride-location.jpg' %}" alt="">
-            <h2 class="st-font-34 font-weight-light br-sm-none">We got over <span class="text-emerald font-weight-bold">500+</span>
-                Driver<br/>& <span class="text-emerald font-weight-bold">2000+</span> Users in <span
-                        class="text-emerald font-weight-bold">1</span> City</h2>
+            <h2 class="st-font-34 font-weight-light br-sm-none">We got over <span
+                    class="text-emerald font-weight-bold">500+</span>
+                Driver<br />& <span class="text-emerald font-weight-bold">2000+</span> Users in <span
+                    class="text-emerald font-weight-bold">1</span> City</h2>
         </div>
     </div>
     <!--End container -->
@@ -167,7 +199,7 @@
 <!--End st_ride_location -->
 
 <div id="download" class="st_app_download_area bg-clear-day st-background-wrap"
-     style="background-image: url({% static 'assets/images/v5/download-bg.png' %});">
+    style="background-image: url({% static 'assets/images/v5/download-bg.png' %});">
     <div class="container">
         <div class="row">
             <div class="col-lg-6 d-flex justify-content-start align-items-center">
@@ -191,11 +223,9 @@
                     <!-- <div class="st_or text-emerald">or</div> -->
                     <div class="st_app_download_btn">
                         <a class="st_default_btn bg-st-white" href="#"><img
-                                src="{% static 'assets/images/v5/google-play.png' %}"
-                                alt=""></a>
+                                src="{% static 'assets/images/v5/google-play.png' %}" alt=""></a>
                         <a class="st_default_btn bg-haiti" href="#"><img
-                                src="{% static 'assets/images/v5/app-store.png' %}"
-                                alt=""></a>
+                                src="{% static 'assets/images/v5/app-store.png' %}" alt=""></a>
                     </div>
                 </div>
             </div>
@@ -347,7 +377,7 @@
                     <div class="st_faq_single_item">
                         <i class="fas fa-question-circle text-emerald"></i>
                         <h3><strong>How do I give rides to earn money?
-                        </strong></h3>
+                            </strong></h3>
                     </div>
                     <div class="st-faq-content">
                         <p>You have to become a Sawari partner to give rides and earn money.To become a Sawari partner,
@@ -364,7 +394,7 @@
                     <div class="st_faq_single_item">
                         <i class="fas fa-question-circle text-emerald"></i>
                         <h3><strong>Can I use the same mobile number to use both Sawari and Sawari partner
-                            apps?</strong></h3>
+                                apps?</strong></h3>
                     </div>
                     <div class="st-faq-content">
                         <p>Yes, you can use same mobile number to use both the app. However, the process to sign up is
@@ -382,7 +412,7 @@
                     <div class="st_faq_single_item">
                         <i class="fas fa-question-circle text-emerald"></i>
                         <h3><strong>Do I have to turn on Mobile data throughout my journey?
-                        </strong></h3>
+                            </strong></h3>
                     </div>
                     <div class="st-faq-content">
                         <p>For clients, you have to turn on the mobile data or have an internet connection till the
@@ -401,7 +431,7 @@
                     <div class="st_faq_single_item">
                         <i class="fas fa-question-circle text-emerald"></i>
                         <h3><strong>What if my rider drove dangerously/behaved rudely?
-                        </strong></h3>
+                            </strong></h3>
                     </div>
                     <div class="st-faq-content">
                         <p>For this type of issue, you may ask the rider for slowing down bike speed or you can ask him
@@ -415,7 +445,7 @@
                     <div class="st_faq_single_item">
                         <i class="fas fa-question-circle text-emerald"></i>
                         <h3><strong>Why is my account suspended? How to appeal?
-                        </strong></h3>
+                            </strong></h3>
                     </div>
                     <div class="st-faq-content">
                         <p>Please call us at our helpline to know the suspension reason and duration. You have to visit
@@ -432,14 +462,14 @@
 <!--- End st_faq_area -->
 
 <footer id="contact" class="st_default_footer_area bg-haiti st_subscribe_footer st_section_padding"
-        style="background-image: url({% static 'assets/images/footer-shape.png' %});">
+    style="background-image: url({% static 'assets/images/footer-shape.png' %});">
     <div class="container">
         <div class="st_subscription_wrapper text-center wow fadeInUp" data-wow-delay="0.3s">
             <h2 class="text-st-white">Subscribe our newsletter for product & promtion</h2>
             <div class="st_subscribe st_subscribe_flat">
                 <form id="st-subscription-form" class="st-form">
                     <input id="st-subscription-email" class="st_subscribe_email" placeholder="Enter email address"
-                           required="required" name="EMAIL" type="email">
+                        required="required" name="EMAIL" type="email">
                     <input class="st_subscribe_btn bg-emerald bg-hover-aqua" value="subscribe" type="submit">
                     <div class="st_subscription_info">Please enter a value</div>
                 </form>
@@ -453,7 +483,8 @@
                     <!-- <p>Holisticly streamline client-centric intuitive markets and a good intuitive human capital. a great place for the placing in a muse.</p> -->
                 </div>
                 <div class="st_copyright_content d-lg-block st-d-md-none">
-                    <p>All Right Reserved by <a class="text-white" href="https://itsoch.com">iTsoch</a> Copyright &copy;2020
+                    <p>All Right Reserved by <a class="text-white" href="https://itsoch.com">iTsoch</a> Copyright
+                        &copy;2020
                     </p>
                 </div>
             </div>
@@ -516,4 +547,14 @@
     <!--- End container -->
 </footer>
 <!--- End st_default_footer_area -->
+
+<!-- <script language="JavaScript">
+    function showInput() {
+        document.getElementById('display').innerHTML =
+                    document.getElementById("user_input").value;
+    }
+  </script> -->
+  
 {% endblock content %}
+
+
