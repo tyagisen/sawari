@@ -1,9 +1,11 @@
 from django.shortcuts import render
-from django.shortcuts import render,redirect,HttpResponse,get_object_or_404
-from .models import *
+from django.shortcuts import render, redirect, HttpResponse, get_object_or_404
+from .models import Blog
 from django.urls import reverse_lazy
-from django.views.generic import ListView, DetailView, RedirectView,TemplateView
-from blog.models import Blog as BlogModel
+from django.views.generic import ListView, DetailView, RedirectView, TemplateView
+# from blog.models import Blog as BlogModel
+
+
 # Create your views here.
 
 # def home(request):
@@ -14,16 +16,29 @@ from blog.models import Blog as BlogModel
 #     context_object_name = 'home'
 #     template_name = 'index.html'
 
-class BlogView(TemplateView):
+# class BlogView(TemplateView):
+#     model = Blog
+#     context_object_name = 'blog'
+#     template_name = 'blog.html'
+
+#     def get(self,request):
+#         context={
+#             'blog': BlogModel.objects.all()
+#         }
+#         return render(request, self.template_name,context)
+
+class BlogView(ListView):
     model = Blog
     context_object_name = 'blog'
     template_name = 'blog.html'
+    paginate_by = 2
 
-    def get(self,request):
-        context={
-            'blog': BlogModel.objects.all()
-        }
-        return render(request, self.template_name,context)
+    # def get(self, request):
+    #     context = {
+    #         'blog': BlogModel.objects.all()
+    #     }
+    #     return render(request, self.template_name, context)
+
 
 def blog_details(request, id):
     # data = Blog.objects.get(pk=id) #SELECT * FROM 'blog'
@@ -32,4 +47,3 @@ def blog_details(request, id):
         'blog_detail': data
     }
     return render(request, 'blogdetail.html', context)
-

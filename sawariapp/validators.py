@@ -8,3 +8,4 @@ def validate_number(value):
             _('Invalid Phone Number.'),
             params={'value': value},
         )
+
