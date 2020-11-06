@@ -1,0 +1,5 @@
+/* input your custom styles or overwrite css */
+.row {
+    align-items: center;
+    justify-content: center
+}
