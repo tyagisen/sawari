@@ -3,9 +3,11 @@ from .forms import DriverForm
 from django.contrib import messages
 from django.core.mail import send_mail
 from django.conf import settings
+from django.http import HttpResponseRedirect
 
 
 def sign(request):
+    success = False
     if request.method == 'POST':
         fm = DriverForm(request.POST)
         message1 = request.POST['name']
@@ -26,6 +28,8 @@ def sign(request):
         else:
             messages.add_message(request, messages.INFO, 'Your Credentials Were Incorrect')
             # fm = DriverForm()   
+            success = True
+            fm = DriverForm()
     else:
         fm = DriverForm()
-    return render(request, 'index.html', {'form': fm})
+    return render(request, 'index.html', {'form': fm, 'success': success})

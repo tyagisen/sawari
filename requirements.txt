@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 acora==2.2
 adblockparser==0.7
 AdvancedHTTPServer==2.2.0
@@ -288,6 +289,14 @@ python-snappy==0.5.3
 pythondialog==3.5.1
 PyTrie==0.2
 pytsk3==20200117
+=======
+asgiref==3.2.10
+Django==3.1.2
+django-bootstrap-modal-forms==2.0.0
+django-ckeditor==6.0.0
+django-js-asset==1.2.2
+Pillow==8.0.1
+>>>>>>> 1cc369c8818e57e33a71f2dccfb67378b1d297cb
 pytz==2020.1
 pywerview==0.2.0
 pywinrm==0.4.1
