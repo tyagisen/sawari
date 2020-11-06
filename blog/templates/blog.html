@@ -239,17 +239,30 @@
             <!-- Starting Paging list-->
             <div class="st_pagination_wrap d-flex justify-content-between align-items-center p-t-70 p-b-100 p-md-t-50 p-md-b-60">
                 <div class="st_single_pagination order-0">
-                    <a class="st_pagination font-weight-medium d-inline-block p-t-b-25 p-l-r-35 text-haiti st-font-14 bg-polar" href="#"><i class="fas fa-arrow-left text-st-aqua m-r-10"></i>PREV PAGE</a>
+                    {% if page_obj.has_previous %}
+
+                    <a class="st_pagination font-weight-medium d-inline-block p-t-b-25 p-l-r-35 text-haiti st-font-14 bg-polar" href="?page={{page_obj.previous_page_number}}"><i class="fas fa-arrow-left text-st-aqua m-r-10" ></i>PREV PAGE</a>
+                    {% endif %}
+
                 </div>
+
                 <div class="st_single_pagination order-lg-2 order-md-1">
-                    <a class="st_pagination font-weight-medium d-inline-block p-t-b-25 p-l-r-35 text-haiti st-font-14 bg-polar" href="#">NEXT PAGE<i class="fas fa-arrow-right text-st-aqua m-l-10"></i></a>
+                    {% if page_obj.has_next %}
+
+                    <a class="st_pagination font-weight-medium d-inline-block p-t-b-25 p-l-r-35 text-haiti st-font-14 bg-polar" href="?page={{page_obj.next_page_number}}" >NEXT PAGE<i class="fas fa-arrow-right text-st-aqua m-l-10"></i></a>
+                    {% endif %}
                 </div>
                 
                 <div class="st_single_pagination order-lg-1 order-md-2 st-text-md-center m-md-t-40">
                     <ul class="list-inline m-0 st_number_pagenation">
-                        <li><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a class="active" href="#">3</a></li>
+                        <span>Page</span>
+
+                        <li><a href="#" class="active" style="background-color: #38D16A;">{{page_obj.number}}</a></li>
+                        <span>of</span>
+
+                        <li>{{page_obj.paginator.num_pages}}</li>
+                        
+                        <!-- <li><a class="active" href="#">3</a></li> -->
                     </ul>
                 </div>
             </div>
